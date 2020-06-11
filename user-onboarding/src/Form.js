@@ -115,7 +115,7 @@ const Form = () => {
             <div>
                 <label htmlFor='name'>
                     Name 
-                    <input type='text' value={formState.name} name='name' onChange={inputChange}/>
+                    <input type='text' value={formState.name} name='name' data-cy="name" onChange={inputChange}/>
                     {errors.name.length > 0 ? <p>{errors.name}</p> : null}
                 </label>
             </div>
@@ -123,7 +123,7 @@ const Form = () => {
             <div>
                 <label htmlFor='email'>
                     Email 
-                    <input type='text' value={formState.email} name='email' onChange={inputChange}/>
+                    <input type='text' value={formState.email} name='email' data-cy="email" onChange={inputChange}/>
                     {errors.email.length > 0 ? <p>{errors.email}</p> : null}
                 </label>
             </div>
@@ -131,21 +131,21 @@ const Form = () => {
             <div>
                 <label htmlFor='password'>
                     Password 
-                    <input type='text' value={formState.password} name='password' onChange={inputChange}/>
+                    <input type='text' value={formState.password} name='password' data-cy="password" onChange={inputChange}/>
                     {errors.password.length > 0 ? <p>{errors.password}</p> : null}
                 </label>
             </div>
             <br/>
             <div>
                 <label htmlFor='terms'>
-                    <input type='checkbox' name='terms' checked={formState.terms} onChange={inputChange}/>
+                    <input type='checkbox' name='terms' data-cy="terms" checked={formState.terms} onChange={inputChange}/>
                     I agree to Terms of Service.
                 </label>
             </div>
             <br/>
             <div>
                 <pre>{JSON.stringify(post, null, 2)}</pre>
-                <button disabled={buttonDisabled}>Submit</button>
+                <button disabled={buttonDisabled} data-cy="submit">Submit</button>
             </div>
         </form>
     );
